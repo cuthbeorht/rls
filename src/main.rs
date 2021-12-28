@@ -1,10 +1,13 @@
-print
+use std::io;
+use std::fs::{self, DirEntry};
+use std::path::Path;
 
 fn main() {
-    println!("Hello, world!");
-    loop {
-        println!("In a loop...");
+    println!("Iterating over items in / directory");
 
-        break;
+    let mut entries = fs::read_dir("/").unwrap();
+
+    for entry in entries {
+        println!("Entry: {}", entry.unwrap().path().display());
     }
 }
