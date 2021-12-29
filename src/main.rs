@@ -8,6 +8,6 @@ fn main() {
     let mut entries = fs::read_dir("/").unwrap();
 
     for entry in entries {
-        println!("Entry: {}", entry.unwrap().path().display());
+        println!("{}", entry.unwrap().path().display());
     }
 }
