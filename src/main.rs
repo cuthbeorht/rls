@@ -40,10 +40,12 @@ fn get_file_info(full_name_and_path: &PathBuf) -> File {
         is_file = String::from("File")
     }
 
+    let file_name_and_path = full_name_and_path.to_path_buf().as_path().display().to_string();
+    let file_name = full_name_and_path.to_str().unwrap().to_string();
+
     let file: File = File {
-        // path: full_name_and_path.into_os_string().into_string().unwrap(),
-        path: String::from("fff"),
-        name: String::from("main.rs"),
+        path: file_name_and_path,
+        name: file_name,
         size_in_bytes: file_metadata.len(),
         permissions: file_metadata.permissions().mode(),
         is_file: is_file
