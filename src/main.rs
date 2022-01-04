@@ -41,7 +41,8 @@ fn get_file_info(full_name_and_path: &PathBuf) -> File {
     }
 
     let file_name_and_path = full_name_and_path.to_path_buf().as_path().display().to_string();
-    let file_name = full_name_and_path.to_str().unwrap().to_string();
+    // let file_name = full_name_and_path.to_str().unwrap().to_string();
+    let file_name = full_name_and_path.file_name().unwrap().to_str().unwrap().to_string();
 
     let file: File = File {
         path: file_name_and_path,
