@@ -50,5 +50,4 @@ fn get_file_info(full_name_and_path: &PathBuf) -> File {
     };
 
     return file
-    // return file_metadata;
 }
