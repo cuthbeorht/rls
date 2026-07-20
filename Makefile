@@ -4,6 +4,9 @@ all:
 clean:
 	@rm -rf target
 
+fmt:
+	@cargo fmt
+
 build: src/main.rs
 	@cargo build
 
